@@ -159,9 +159,61 @@ const client = new CrawlAPI({ apiKey: process.env.RAPIDAPI_KEY! });
 const result: ScrapeResponse = await client.scrape('https://example.com');
 ```
 
+## MCP Server (Claude Desktop, Cursor, Windsurf)
+
+CrawlAPI ships with a built-in [MCP server](https://modelcontextprotocol.io) — plug it directly into any MCP-compatible AI client.
+
+### Setup
+
+**1. Clone or download `mcp-server.js`** from this repo.
+
+**2. Add to your Claude Desktop config** (`~/Library/Application Support/Claude/claude_desktop_config.json` on Mac):
+
+```json
+{
+  "mcpServers": {
+    "crawlapi": {
+      "command": "node",
+      "args": ["/path/to/crawlapi-js/mcp-server.js"],
+      "env": {
+        "CRAWLAPI_KEY": "your_rapidapi_key"
+      }
+    }
+  }
+}
+```
+
+**3. Restart Claude Desktop.** You'll see three new tools:
+- `scrape_url` — scrape any page to markdown
+- `batch_scrape` — scrape up to 10 URLs in parallel
+- `search_and_scrape` — search + scrape top results in one shot
+
+### Cursor / Windsurf / Continue
+
+Same config, different location. Check your editor's MCP docs. The `mcp-server.js` file works with any stdio-transport MCP client.
+
+### What the agent sees
+
+> "Use `scrape_url` to fetch web pages as clean markdown. Use `search_and_scrape` to research topics from the live web. Both support JavaScript-rendered pages."
+
+Get your API key at [RapidAPI](https://rapidapi.com/crawlapi/api/crawlapi) — free tier included.
+
+## AI Agent Discovery
+
+CrawlAPI publishes all standard discovery files:
+
+| File | URL |
+|------|-----|
+| `llms.txt` | [crawlapi.net/llms.txt](https://crawlapi.net/llms.txt) |
+| OpenAPI spec | [crawlapi.net/openapi.json](https://crawlapi.net/openapi.json) |
+| AI Plugin manifest | [crawlapi.net/.well-known/ai-plugin.json](https://crawlapi.net/.well-known/ai-plugin.json) |
+| MCP manifest | [crawlapi.net/.well-known/mcp.json](https://crawlapi.net/.well-known/mcp.json) |
+| APIs.json | [crawlapi.net/apis.json](https://crawlapi.net/apis.json) |
+
 ## Links
 
 - 🌐 [crawlapi.net](https://crawlapi.net)
 - 📦 [RapidAPI listing](https://rapidapi.com/crawlapi/api/crawlapi)
 - 📄 [OpenAPI spec](https://crawlapi.net/openapi.json)
 - 🤖 [llms.txt](https://crawlapi.net/llms.txt)
+- 🔌 [MCP server](./mcp-server.js)
