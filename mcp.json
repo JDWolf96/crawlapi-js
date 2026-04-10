@@ -1,0 +1,41 @@
+{
+  "name": "crawlapi",
+  "display_name": "CrawlAPI — Web Scraping for AI Agents",
+  "description": "Scrape any URL with JavaScript rendering. Returns clean markdown, HTML, text, or structured JSON for LLM pipelines. Supports single URL, batch (10x parallel), and search+scrape in one call.",
+  "version": "1.0.0",
+  "homepage": "https://crawlapi.net",
+  "logo": "https://crawlapi.net/logo.jpg",
+  "license": "MIT",
+  "categories": ["web-scraping", "data-extraction", "search", "AI", "LLM"],
+  "tools": [
+    {
+      "name": "scrape_url",
+      "description": "Scrape a single URL with full JavaScript rendering. Returns markdown, HTML, text, or structured JSON."
+    },
+    {
+      "name": "batch_scrape",
+      "description": "Scrape up to 10 URLs in parallel. Results in same order as input; failures don't break the batch."
+    },
+    {
+      "name": "search_and_scrape",
+      "description": "Search the web and scrape top N results in one API call. Perfect for autonomous research agents."
+    }
+  ],
+  "config": {
+    "command": "node",
+    "args": ["path/to/crawlapi-js/mcp-server.js"],
+    "env": {
+      "CRAWLAPI_KEY": {
+        "description": "Your RapidAPI key for CrawlAPI",
+        "required": true
+      }
+    }
+  },
+  "links": {
+    "homepage": "https://crawlapi.net",
+    "openapi": "https://crawlapi.net/openapi.json",
+    "llms_txt": "https://crawlapi.net/llms.txt",
+    "rapidapi": "https://rapidapi.com/crawlapi/api/crawlapi",
+    "github": "https://github.com/JDWolf96/crawlapi-js"
+  }
+}

@@ -4,7 +4,7 @@
   "description": "JavaScript/TypeScript SDK for CrawlAPI — web scraping API for AI agents",
   "main": "index.js",
   "types": "index.d.ts",
-  "keywords": ["crawl", "scrape", "web scraping", "ai", "llm", "agents", "langchain", "markdown", "puppeteer"],
+  "keywords": ["crawl", "scrape", "web scraping", "ai", "llm", "agents", "langchain", "markdown", "puppeteer", "mcp", "model-context-protocol", "mcp-server", "claude", "cursor", "windsurf"],
   "author": "CrawlAPI",
   "license": "MIT",
   "homepage": "https://crawlapi.net",
