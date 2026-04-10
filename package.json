@@ -1,0 +1,20 @@
+{
+  "name": "crawlapi-js",
+  "version": "1.0.0",
+  "description": "JavaScript/TypeScript SDK for CrawlAPI — web scraping API for AI agents",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "keywords": ["crawl", "scrape", "web scraping", "ai", "llm", "agents", "langchain", "markdown", "puppeteer"],
+  "author": "CrawlAPI",
+  "license": "MIT",
+  "homepage": "https://crawlapi.net",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/crawlapi/crawlapi-js"
+  },
+  "bugs": {
+    "url": "https://github.com/crawlapi/crawlapi-js/issues"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
